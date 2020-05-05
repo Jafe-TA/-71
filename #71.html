@@ -1,0 +1,48 @@
+<!--
+
+- Implementar un tablero de TaTeTi. Asociar el evento click de los 9 
+botones a una única función. Alternar entre las "X" y "0". Mostrar un mensaje cuando gana un jugador.
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejemplo de JavaScript</title>
+<meta charset="UTF-8">
+</head>
+<body>
+
+<form method="post" action="procesar.php" id="formulario1">
+Ingrese clave:
+<input type="password" id="clave1" name="clave1" size="20" required>
+<br>
+Confirme su clave:
+<input type="password" id="clave2" name="clave2" size="20" required>
+<br>
+<input type="submit" id="confirmar" name="confirmar" value="Confirmar">
+</form>
+
+<script>
+window.addEventListener('DOMContentLoaded', inicio, false);
+
+function inicio() {
+document.getElementById("formulario1").addEventListener('submit', validar, false);
+}
+
+function validar(evt) {
+var cla1 = document.getElementById("clave1").value;
+var cla2 = document.getElementById("clave2").value;
+if (cla1!=cla2){
+alert('Las claves ingresadas no son iguales');
+evt.preventDefault();
+}else{
+    if(cla1==cla2){
+        alert('Las claves ingresadas son iguales');
+        evt.preventDefault();       
+    }
+}
+}
+</script>
+
+</body>
+</html>
